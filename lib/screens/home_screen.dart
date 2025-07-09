@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.deepPurple.shade900,
-        title: const Text('🏠 Dungeon Master'),
+        title: const Text('🧙‍♂️ Dungeon Master'),
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
@@ -24,41 +24,61 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Welcome, ${user?.displayName ?? 'Adventurer'}!",
-              style: const TextStyle(
-                fontSize: 24,
-                color: Colors.white,
-              ),
+              style: const TextStyle(fontSize: 24, color: Colors.white),
             ),
             const SizedBox(height: 30),
-            _buildActionButton(context, "🗡️ /hunt", "/adventure"),
-            const SizedBox(height: 10),
-            _buildActionButton(context, "📊 /profile", "/profile"),
+            _buildIconButton(
+                context, 'assets/icons/inventory.png', 'Inventory', '/inventory'),
+            const SizedBox(height: 20),
+            _buildIconButton(
+                context, 'assets/icons/storyline.png', 'Storyline', '/storyline'),
+            const SizedBox(height: 20),
+            _buildIconButton(
+                context, 'assets/icons/battle.png', 'Battle', '/battle'),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildActionButton(BuildContext context, String label, String route) {
-    return SizedBox(
-      width: double.infinity,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.deepPurple.shade700,
-          foregroundColor: Colors.white,
-          padding: const EdgeInsets.symmetric(vertical: 16),
+  Widget _buildIconButton(
+      BuildContext context, String imagePath, String label, String route) {
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, route),
+      child: Container(
+        width: double.infinity,
+        height: 120,
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: Colors.deepPurple.withOpacity(0.3),
+          borderRadius: BorderRadius.circular(16),
         ),
-        onPressed: () {
-          Navigator.pushNamed(context, route);
-        },
-        child: Text(label, style: const TextStyle(fontSize: 18)),
+        child: Row(
+          children: [
+            Image.asset(
+              imagePath,
+              width: 80,
+              height: 80,
+              fit: BoxFit.contain,
+            ),
+            const SizedBox(width: 16),
+            Text(
+              label,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -6,7 +6,10 @@ import 'firebase_options.dart';
 // Screens
 import 'screens/splash_screen.dart';
 import 'screens/login_screen.dart';
-// You can create this later
+import 'screens/inventory.dart';     // ✅ Added
+import 'screens/storyline.dart';     // ✅ Added
+import 'screens/battle.dart';        // ✅ Added
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +41,12 @@ class DungeonMasterApp extends StatelessWidget {
       routes: {
         '/splash': (context) => const SplashScreen(),
         '/': (context) => const LoginScreen(),
-        '/home': (context) => const HomeScreen(), // placeholder for your game screen
+        '/home': (context) => const HomeScreen(),
+        '/inventory': (context) => const InventoryScreen(),   // ✅ Added
+        '/storyline': (context) => const StorylineScreen(),   // ✅ Added
+        '/battle': (context) => const BattleScreen(),         // ✅ Added
+        
+
       },
     );
   }

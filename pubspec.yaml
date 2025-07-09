@@ -39,6 +39,9 @@ flutter:
   assets:
     - assets/icons8-google-48.png
     - assets/splash_animation.json
+    - assets/icons/inventory.png
+    - assets/icons/storyline.png
+    - assets/icons/battle.png
     # - assets/branding.png  # optional branding image
 
 flutter_native_splash:
@@ -47,3 +50,6 @@ flutter_native_splash:
   fullscreen: true
   android: false
   ios: true
+
+
+    
