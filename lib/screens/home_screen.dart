@@ -73,8 +73,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     final user = _auth.currentUser;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Dungeon Master'),
+      appBar: AppBar(backgroundColor: Colors.deepPurple.shade900,
+        title: Center(child: const Text('🧙‍♂️ Dungeon Master')),
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
@@ -133,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       FilledButton(
                         onPressed: () {
                           // TODO: Add your start action here
-                          Navigator.pushNamed(context, '/story'); // or any route
+                          Navigator.pushNamed(context, '/adventure'); // or any route
                         },
                         child: const Text("Start"),
                       ),

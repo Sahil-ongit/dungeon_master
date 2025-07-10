@@ -42,6 +42,7 @@ flutter:
     - assets/icons/inventory.png
     - assets/icons/storyline.png
     - assets/icons/battle.png
+    - assets/Wizard_bg.png
     # - assets/branding.png  # optional branding image
 
 flutter_native_splash:

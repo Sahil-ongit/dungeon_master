@@ -1,3 +1,4 @@
+import 'package:dungeon_master/screens/adventure.dart';
 import 'package:dungeon_master/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -44,8 +45,8 @@ class DungeonMasterApp extends StatelessWidget {
         '/home': (context) => const HomeScreen(),
         '/inventory': (context) => const InventoryScreen(),   // ✅ Added
         '/storyline': (context) => const StorylineScreen(),   // ✅ Added
-        '/battle': (context) => const BattleScreen(),         // ✅ Added
-        
+        '/battle': (context) => const BattleScreen(),
+        '/adventure': (context) => const AdventureHomeScreen(),   // ✅ Added
 
       },
     );
